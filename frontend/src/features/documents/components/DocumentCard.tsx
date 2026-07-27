@@ -1,4 +1,5 @@
 import type { DocumentStatus } from '../mockDocuments'
+import { DocumentStatusBadge } from './DocumentStatusBadge'
 
 type DocumentCardProps = {
   title: string
@@ -11,22 +12,22 @@ export function DocumentCard({
   status,
   updatedText,
 }: DocumentCardProps) {
-  const statusClassName =
-    status === 'Published'
-      ? 'bg-emerald-50 text-emerald-700'
-      : 'bg-amber-50 text-amber-700'
-
   return (
     <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-      <h2 className="text-lg font-semibold tracking-tight text-slate-900">
-        {title}
-      </h2>
-      <div className="mt-6 flex items-center justify-between gap-3 text-sm">
-        <span
-          className={`rounded-full px-2.5 py-1 font-medium ${statusClassName}`}
+      <div className="flex items-start justify-between gap-4">
+        <h2 className="text-lg font-semibold tracking-tight text-slate-900">
+          {title}
+        </h2>
+        <button
+          type="button"
+          aria-label={`Open actions for ${title}`}
+          className="shrink-0 rounded-md px-2 py-1 text-lg leading-none text-slate-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          {status}
-        </span>
+          •••
+        </button>
+      </div>
+      <div className="mt-6 flex items-center justify-between gap-3 text-sm">
+        <DocumentStatusBadge status={status} />
         <p className="text-slate-500">{updatedText}</p>
       </div>
     </article>
