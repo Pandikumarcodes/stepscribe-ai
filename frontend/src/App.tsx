@@ -1,22 +1,23 @@
 import { Route, Routes } from 'react-router-dom'
+import { AppLayout } from './components/layout/AppLayout'
 
 function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-6 py-16 text-white">
+    <AppLayout>
       <section
         className="mx-auto max-w-3xl text-center"
         aria-labelledby="home-heading"
       >
-        <p className="mb-4 text-sm font-semibold tracking-[0.24em] text-indigo-300 uppercase">
+        <p className="mb-4 text-sm font-semibold tracking-[0.24em] text-indigo-600 uppercase">
           StepScribe AI
         </p>
         <h1
           id="home-heading"
-          className="text-4xl font-bold tracking-tight sm:text-6xl"
+          className="text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl"
         >
           StepScribe AI
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
           Create polished SOPs and step-by-step guides with AI
         </p>
         <button
@@ -27,7 +28,7 @@ function HomePage() {
           Create document
         </button>
       </section>
-    </main>
+    </AppLayout>
   )
 }
 
