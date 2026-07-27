@@ -2,14 +2,16 @@ import { Route, Routes } from 'react-router-dom'
 import { AppLayout } from './components/layout/AppLayout'
 import { DocumentsHeader } from './features/documents/components/DocumentsHeader'
 import { SearchInput } from './features/documents/components/SearchInput'
+import { StatusFilter } from './features/documents/components/StatusFilter'
 
 function HomePage() {
   return (
     <AppLayout>
       <div className="w-full max-w-5xl">
         <DocumentsHeader />
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
           <SearchInput />
+          <StatusFilter />
         </div>
         <section className="mt-16 max-w-2xl" aria-labelledby="product-heading">
           <p className="text-sm font-semibold tracking-[0.24em] text-indigo-600 uppercase">
