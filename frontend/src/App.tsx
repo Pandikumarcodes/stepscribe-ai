@@ -3,6 +3,7 @@ import { AppLayout } from './components/layout/AppLayout'
 import { DocumentsHeader } from './features/documents/components/DocumentsHeader'
 import { SearchInput } from './features/documents/components/SearchInput'
 import { StatusFilter } from './features/documents/components/StatusFilter'
+import { SortDropdown } from './features/documents/components/SortDropdown'
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
           <SearchInput />
           <StatusFilter />
+          <SortDropdown />
         </div>
         <section className="mt-16 max-w-2xl" aria-labelledby="product-heading">
           <p className="text-sm font-semibold tracking-[0.24em] text-indigo-600 uppercase">
